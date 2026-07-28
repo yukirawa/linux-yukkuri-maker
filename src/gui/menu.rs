@@ -340,7 +340,7 @@ fn export_video(state: &Rc<RefCell<AppState>>) {
     }
 }
 
-fn apply_undo_redo(
+pub fn apply_undo_redo(
     project: &mut crate::gui::state::Project,
     cmd: &crate::gui::state::EditCommand,
 ) {
