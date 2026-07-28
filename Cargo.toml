@@ -1,19 +1,16 @@
 [package]
 name = "linux-yukkuri-maker"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
 # GUI
-fltk = "1.4"
+fltk = { version = "1.4", features = ["fltk-bundled"] }
 
 # ボイス処理 AquesTalk 
 aquestalk = "0.1"           # AquesTalkラッパー
 reqwest = { version = "0.12", optional = true }  # VOICEVOX HTTP API用
 tokio = { version = "1.0", features = ["full"], optional = true }  # 非同期処理
-
-# 映像処理 FFmpeg
-ffmpeg-next = "8.0"
 
 # プロジェクト保存（JSONシリアライズ）
 serde = { version = "1.0", features = ["derive"] }
