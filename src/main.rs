@@ -1,3 +1,9 @@
+mod gui;
+mod voice;
+mod video;
+mod project;
+mod utils;
+
 fn main() {
-    println!("Hello, world!");
+    gui::run_app();
 }
