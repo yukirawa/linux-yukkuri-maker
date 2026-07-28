@@ -283,6 +283,8 @@ pub enum PlaybackState {
 pub struct AppState {
     /// 現在のプロジェクト
     pub project: Project,
+    /// アンドゥ/リドゥスタック
+    pub undo_stack: UndoStack,
     /// 再生状態
     pub playback_state: PlaybackState,
     /// 現在の再生位置（秒）
@@ -305,6 +307,7 @@ impl AppState {
     pub fn new() -> Self {
         Self {
             project: Project::default(),
+            undo_stack: UndoStack::new(100),
             playback_state: PlaybackState::Stopped,
             playback_position: 0.0,
             selected_clip_id: None,
