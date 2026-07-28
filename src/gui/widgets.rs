@@ -36,8 +36,12 @@ impl Widgets {
 
     /// ツールバーボタンを作成
     pub fn create_tool_button(
-        x: i32, y: i32, w: i32, h: i32,
-        label: &str, tooltip: &str,
+        x: i32,
+        y: i32,
+        w: i32,
+        h: i32,
+        label: &str,
+        tooltip: &str,
     ) -> Frame {
         let mut frame = Frame::default()
             .with_size(w, h)
@@ -48,20 +52,6 @@ impl Widgets {
         frame.set_frame(FrameType::ThinUpBox);
         frame.set_color(Color::from_rgb(50, 50, 55));
         frame.set_tooltip(tooltip);
-        frame
-    }
-
-    /// ステータスバーを作成
-    pub fn create_status_bar(x: i32, y: i32, w: i32, h: i32) -> Frame {
-        let mut frame = Frame::default()
-            .with_size(w, h)
-            .with_pos(x, y);
-        frame.set_frame(FrameType::FlatBox);
-        frame.set_color(Color::from_rgb(35, 35, 40));
-        frame.set_label_color(Color::from_rgb(150, 150, 160));
-        frame.set_label_size(11);
-        frame.set_align(Align::Left | Align::Inside);
-        frame.set_label("準備完了");
         frame
     }
 
@@ -105,8 +95,26 @@ pub mod colors {
     /// アクセントカラー（緑系 - 成功表示）
     pub const ACCENT_GREEN: Color = Color::from_u32(0x40C040);
 
+    /// アクセントカラー（金系 - 注意）
+    pub const ACCENT_GOLD: Color = Color::from_u32(0xDAA520);
+
     /// 境界線色
     pub const BORDER: Color = Color::from_u32(0x50505A);
+
+    /// タイムライン背景
+    pub const TL_BG: Color = Color::from_u32(0x232328);
+
+    /// トラック背景（奇数）
+    pub const TRACK_ODD: Color = Color::from_u32(0x28282D);
+
+    /// トラック背景（偶数）
+    pub const TRACK_EVEN: Color = Color::from_u32(0x2D2D32);
+
+    /// ヘッダー背景
+    pub const HEADER_BG: Color = Color::from_u32(0x32323A);
+
+    /// メニューバー背景
+    pub const MENU_BG: Color = Color::from_u32(0x28282D);
 }
 
 /// フォント定数
@@ -121,4 +129,16 @@ pub mod fonts {
 
     /// 等幅フォント
     pub const MONO: Font = Font::Courier;
+
+    /// UI用小サイズ
+    pub const SIZE_XS: i32 = 10;
+
+    /// UI用標準サイズ
+    pub const SIZE_SM: i32 = 11;
+
+    /// UI用標準サイズ
+    pub const SIZE_NORMAL: i32 = 13;
+
+    /// UI用大サイズ
+    pub const SIZE_LG: i32 = 16;
 }

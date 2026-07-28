@@ -7,6 +7,12 @@ edition = "2021"
 # GUI
 fltk = { version = "1.4", features = ["fltk-bundled"] }
 
+# GStreamer による動画再生・編集エンジン
+gstreamer = "0.23"
+gstreamer-video = "0.23"
+gstreamer-app = "0.23"
+glib = "0.20"
+
 # ボイス処理 AquesTalk 
 aquestalk = "0.1"           # AquesTalkラッパー
 reqwest = { version = "0.12", optional = true }  # VOICEVOX HTTP API用

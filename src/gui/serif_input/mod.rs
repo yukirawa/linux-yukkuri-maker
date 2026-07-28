@@ -6,15 +6,15 @@ use fltk::{
 };
 
 /// セリフ入力パネル
-pub struct TextInputPanel {
+pub struct SerifInputPanel {
     pub group: Group,
     editor: TextEditor,
     buffer: TextBuffer,
 }
 
-impl TextInputPanel {
-    /// 新しいテキスト入力パネルを作成
-    pub fn new(x: i32, y: i32, w: i32, h: i32, _label: &str) -> Self {
+impl SerifInputPanel {
+    /// 新しいセリフ入力パネルを作成
+    pub fn new(x: i32, y: i32, w: i32, h: i32) -> Self {
         let mut group = Group::default()
             .with_size(w, h)
             .with_pos(x, y);
